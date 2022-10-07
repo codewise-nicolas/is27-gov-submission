@@ -18,16 +18,35 @@ jobs:
       #checkout project
       - uses: actions/checkout@v3
 
-      #setup java. no, has java 8/11/17
+      #setup java? has java 8/11/17
+      - name: JDK11
+        uses: actions/setup-java@v3
+        with:
+          cache: gradle
+          java-version: '11'
+          distribution: 'zulu'
 
       #setup node version 14, may work with newer but for now aim for 14.
-      - uses: actions/setup-node@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
 
-      #setup yarn+other tools. not needed already installed in image
+      #setup yarn+other tools.
+      - name: Setup Yarn and tools
+        run: |
+          npm -g i yarn
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v2
+
+      #setup env
+      - name: Setup Env
+        run: |
+          yarn install
 
       #run gradle 
-      - run: |
+      - name: Actual Gradle Build
+        run: |
           cd android
           ./gradlew bundleRelease
