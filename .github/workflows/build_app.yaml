@@ -26,5 +26,5 @@ jobs:
 
       #run gradle 
       - run: |
-        cd android
-        ./gradlew bundleRelease
+          cd android
+          ./gradlew bundleRelease
