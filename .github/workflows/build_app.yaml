@@ -1,9 +1,30 @@
 name: Build Sample Mobile App for iOS and Android
 
 jobs:
-  build_ios:
-    name: Build the iOS version of the app
-    runs-on: macos-12
+#  build_ios:
+#    name: Build the iOS version of the app
+#    runs-on: macos-12
 
   build_android:
     name: Build the Android version of the app
+
+    #ubuntu-20 (latest right now) https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2004-Readme.md
+    runs-on: ubuntu-latest
+
+    steps:    
+      #checkout project
+      - uses: action/checkout@v3
+
+      #setup java. no, has java 8/11/17
+
+      #setup node version 14, may work with newer but for now aim for 14.
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      #setup yarn+other tools. not needed already installed in image
+
+      #run gradle 
+      - run: |
+        cd android
+        ./gradlew bundleRelease
