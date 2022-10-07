@@ -1,0 +1,9 @@
+name: Build Sample Mobile App for iOS and Android
+
+jobs:
+  build_ios:
+    name: Build the iOS version of the app
+    runs-on: macos-12
+
+  build_android:
+    name: Build the Android version of the app
