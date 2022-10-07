@@ -1,5 +1,8 @@
 name: Build Sample Mobile App for iOS and Android
 
+on:
+  workflow_dispatch:
+
 jobs:
 #  build_ios:
 #    name: Build the iOS version of the app
@@ -13,7 +16,7 @@ jobs:
 
     steps:    
       #checkout project
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
 
       #setup java. no, has java 8/11/17
 
