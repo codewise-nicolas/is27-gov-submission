@@ -10,7 +10,7 @@ Building for iOS locally will require a Mac OS machine.
 It is assumed your environment is setup for iOS development (Xcode) and/or Android development (Android SDK/Android Studio).
 
 ### Steps
->First Clone/Fork this repository and then follow the instructions in the README.md to setup the local development environment.
+>First Clone/Fork this repository and then follow the instructions in the ORIGINAL_README.md to setup the local development environment.
 >
 >
 >iOS
@@ -33,7 +33,7 @@ After this initial build and deploy, you can go back to using `yarn expo ...` fo
 The project has been setup with a Github Workflow YAML file to make use of Github Actions to build binaries of the app.
 It has been setup to run manually via the website or cli. This can be changed to run on push or similar actions as desired.
 
-*self: add information on where to go to run it, and how to get the output*
+To run the flow, manually go to the Github Repository > Actions > Build Sample Mobile App for IOS And Android then click on the drop down "Run workflow", and finally click the green "Run workflow".
 
 
 ---

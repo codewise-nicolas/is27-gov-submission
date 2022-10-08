@@ -2,13 +2,72 @@ name: Build Sample Mobile App for iOS and Android
 
 on:
   workflow_dispatch:
+    inputs:
+      job_to_run:
+        description: 'Job To Run'
+        required: true
+        options:
+        - All
+        - iOS
+        - Android
 
 jobs:
-#  build_ios:
-#    name: Build the iOS version of the app
-#    runs-on: macos-12
+  build_ios:
+    if: "${{ github.event.inputs.job_to_run == 'iOS' || github.event.inputs.job_to_run == 'All' }}"
+    name: Build the iOS version of the app
+
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-12-Readme.md
+    runs-on: macos-12
+
+    steps:
+      #checkout project
+      - uses: actions/checkout@v3
+
+      #setup node version 14, may work with newer but for now aim for 14.
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      #setup yarn+other tools.
+      - name: Setup Yarn and tools
+        run: |
+          npm -g i yarn
+
+      #setup env
+      - name: Setup Env
+        run: |
+          yarn install
+
+
+      - name: Bundle React Project
+        run: |
+          yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
+
+
+
+      - name: Xcode Build
+        run: |
+          cd ios
+          xcodebuild -workspace samplemobileapp.xcworkspace -scheme samplemobileapp  -sdk iphonesimulator -derivedDataPath "./build/app" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -configuration Release
+
+
+      - name: Store Compiled Binary
+        uses: actions/upload-artifact@v1
+        with:
+          name: app
+          path: build/app/Build/Products/Release-iphonesimulator/samplemobileapp.app
+
+
+      #- name: Xcode Build
+
+
+
+
 
   build_android:
+    if: "${{github.event.inputs.job_to_run == 'Android' || github.event.inputs.job_to_run == 'All' }}"
+
     name: Build the Android version of the app
 
     #ubuntu-20 (latest right now) https://github.com/actions/runner-images/blob/main/images/linux/Ubuntu2004-Readme.md
@@ -50,3 +109,9 @@ jobs:
         run: |
           cd android
           ./gradlew bundleRelease
+
+      - name: Store Compiled Binary
+        uses: actions/upload-artifact@v1
+        with:
+          name: aab
+          path: app/build/outputs/bundle/release/app-release.aab 
