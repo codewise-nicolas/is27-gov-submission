@@ -17,6 +17,8 @@ Monday October 10, 2022 - 11:00 AM PDT
 
 
 ---
+Completed required task. Generates iOS app file and Android aab bundle file.\
+Completed Task 1. Created a snapshot test.
 
 ## Files
 - README.md - This File
