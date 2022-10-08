@@ -12,7 +12,7 @@ exports[`renders correctly 1`] = `
   }
 >
   <Text>
-    Good luck!!
+    Good luck!
   </Text>
 </View>
 `;
