@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app
-          path: build/app/Build/Products/Release-iphonesimulator/samplemobileapp.app
+          path: ios/build/app/Build/Products/Release-iphonesimulator/samplemobileapp.app
 
 
       #- name: Xcode Build
@@ -115,4 +115,4 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: aab
-          path: app/build/outputs/bundle/release/app-release.aab 
+          path: android/app/build/outputs/bundle/release/app-release.aab 
