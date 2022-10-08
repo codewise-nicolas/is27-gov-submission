@@ -43,6 +43,11 @@ jobs:
           yarn install
 
 
+      #depending if the tests are testing within react or if testing ios/android this may need to be moved to after the xcode build, but before outputing the binary
+      - name: Run Tests
+        run: yarn test
+
+
       #setup env
       - name: Setup Pods
         run: |
@@ -74,7 +79,7 @@ jobs:
 
 
   build_android:
-    if: "${{github.event.inputs.job_to_run == 'Android' || github.event.inputs.job_to_run == 'All' }}"
+    #if: "${{github.event.inputs.job_to_run == 'Android' || github.event.inputs.job_to_run == 'All' }}"
 
     name: Build the Android version of the app
 
@@ -111,6 +116,10 @@ jobs:
       - name: Setup Env
         run: |
           yarn install
+
+      #depending if the tests are testing within react or if testing ios/android this may need to be moved to after the xcode build, but before outputing the binary
+      - name: Run Tests
+        run: yarn test
 
       #run gradle 
       - name: Actual Gradle Build
