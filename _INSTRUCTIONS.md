@@ -14,7 +14,7 @@ It is assumed your environment is setup for iOS development (Xcode) and/or Andro
 >
 >
 >iOS
->- Depending on your setup you may need to run cocoapods install scripts to finish setting up the /ios project
+>- Depending on your setup you may need to run cocoapods install scripts to finish setting up the /ios project. `npx pod-install`
 >- The first time you will need to build and deploy the app to the simulator of choice, for example
 >`yarn react-native run-ios --simulator "iPhone 8"`
 >
@@ -23,7 +23,7 @@ It is assumed your environment is setup for iOS development (Xcode) and/or Andro
 >`yarn react-native run-android`
 
 
-After this initial build and deploy, you can go back to using `yarn expo ...` for development.
+After this initial build and deploy, you can go back to using `yarn expo run:ios` or `yarn expo run:android` for development.
 
 *Note:* Whenever you add/change any native components you will need to re-build and deploy the native app using the react-native command.
 

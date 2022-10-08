@@ -1,6 +1,8 @@
 name: Build Sample Mobile App for iOS and Android
 
 on:
+  #Alternatively to have this workflow run when a git push happens, or other events, add it here
+
   workflow_dispatch:
     inputs:
       job_to_run:
@@ -48,10 +50,10 @@ jobs:
           npx pod-install
 
 
-      #- name: Bundle React Project
-      #  run: |
-      #    yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
-
+      #make sure react project is bundled for release and not development
+      - name: Bundle React Project
+        run: |
+          yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
 
 
       - name: Xcode Build
