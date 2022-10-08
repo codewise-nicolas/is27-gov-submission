@@ -9,23 +9,23 @@ This project uses a so called bare flow to be able to use react-native to build 
 Building for iOS locally will require a Mac OS machine.
 It is assumed your environment is setup for iOS development (Xcode) and/or Android development (Android SDK/Android Studio).
 
-### Steps
->First Clone/Fork this repository and then follow the instructions in the ORIGINAL_README.md to setup the local development environment.
->
->iOS
->- Depending on your setup you may need to run cocoapods install scripts to finish setting up the /ios project. `npx pod-install`
->- The first time as part of the initial setup you will need to build and deploy the app to the simulator of choice with a command for example
->> `yarn react-native run-ios --simulator "iPhone 8"`
->
->Android
->- Android is simpler in that you only need to run the following command once to get the app built and deployed to the sim
->
->> `yarn react-native run-android`
+### Initial Run Steps
+First Clone/Fork this repository and then follow the instructions in the ORIGINAL_README.md to setup the local development environment.
 
+iOS
+- Depending on your setup you may need to run cocoapods install scripts to finish setting up the /ios project. `npx pod-install`
+- The first time as part of the initial setup you will need to build and deploy the app to the simulator of choice with a command for example
+> `yarn react-native run-ios --simulator "iPhone 8"`
 
-After this initial build and deploy, you can start using `yarn expo run:ios` or `yarn expo run:android` for regular development.
+Android
+- Android is simpler in that you only need to run the following command once to get the app built and deployed to the sim
 
-*Note:* Whenever you add/change any native components you will need to re-build and deploy the native app using the `react-native...` command.
+> `yarn react-native run-android`
+
+### Subsequent Development
+After the initial run steps that build and deploy, you can start using `yarn expo run:ios` or `yarn expo run:android` for regular development.
+
+*IMPORTANT:* Whenever you add/change any native components you will need to re-build and deploy the native app using the `react-native...` command.
 
 ---
 
