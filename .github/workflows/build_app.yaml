@@ -41,9 +41,16 @@ jobs:
           yarn install
 
 
-      - name: Bundle React Project
+      #setup env
+      - name: Setup Pods
         run: |
-          yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
+          cd ios
+          npx pod-install
+
+
+      #- name: Bundle React Project
+      #  run: |
+      #    yarn react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios
 
 
 
@@ -59,8 +66,6 @@ jobs:
           name: samplemobileapp.app
           path: ios/build/app/Build/Products/Release-iphonesimulator/samplemobileapp.app
 
-
-      #- name: Xcode Build
 
 
 
