@@ -2,9 +2,9 @@
 A list of commands and notes for quick refernece for development tasks.
 
 
-- To build the AAB android bundle, from the android folder
+- To build the AAB android bundle locally, from the android folder run
 	- `./gradlew bundleRelease`
-	- It will be output to /android/app/build/outputs/bundle/app-release.aab
+	- The bundle will be output to /android/app/build/outputs/bundle/app-release.aab
 
 - To test the Github Workflow locally use
 	- https://github.com/nektos/act

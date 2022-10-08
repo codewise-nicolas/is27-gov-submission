@@ -65,7 +65,7 @@ jobs:
       - name: Store Compiled Binary
         uses: actions/upload-artifact@v1
         with:
-          name: samplemobileapp.app
+          name: samplemobileapp_ios.app
           path: ios/build/app/Build/Products/Release-iphonesimulator/samplemobileapp.app
 
 
@@ -121,5 +121,5 @@ jobs:
       - name: Store Compiled Binary
         uses: actions/upload-artifact@v1
         with:
-          name: samplemobileapp_android_bundle
+          name: samplemobileapp_android.aab
           path: android/app/build/outputs/bundle/release/app-release.aab 

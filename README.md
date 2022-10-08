@@ -23,4 +23,4 @@ Monday October 10, 2022 - 11:00 AM PDT
 - _DESIGN_CHOICES.md - Information for the submission on why certain steps were taken and why.
 - _INSTRUCTIONS.md - Instructions on setting up the local environment to begin development and on working with the GitHub Workers
 - ORIGINAL_README.md - The original projects instructions on setting up the project
-- _MISC.md - Quick lookup of commands and other helpful tips for development.
+- _MISC.md - Quick lookup of commands and other helpful tips/issue notes for use during development.

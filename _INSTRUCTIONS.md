@@ -1,6 +1,6 @@
 # Instructions
 This repository includes a sample React Native application from https://github.com/bcgov/sample-mobile-app with Github Workflows to build both iOS and Android binaries.
-
+Instructions are provided to get up and running with local development and also using the workflow to generate builds of the app.
 
 ---
 
@@ -12,20 +12,20 @@ It is assumed your environment is setup for iOS development (Xcode) and/or Andro
 ### Steps
 >First Clone/Fork this repository and then follow the instructions in the ORIGINAL_README.md to setup the local development environment.
 >
->
 >iOS
 >- Depending on your setup you may need to run cocoapods install scripts to finish setting up the /ios project. `npx pod-install`
->- The first time you will need to build and deploy the app to the simulator of choice, for example
->`yarn react-native run-ios --simulator "iPhone 8"`
+>- The first time as part of the initial setup you will need to build and deploy the app to the simulator of choice with a command for example
+>> `yarn react-native run-ios --simulator "iPhone 8"`
 >
 >Android
->- Android is simpler in that you only need to run to get the app built and deployed to the sim
->`yarn react-native run-android`
+>- Android is simpler in that you only need to run the following command once to get the app built and deployed to the sim
+>
+>> `yarn react-native run-android`
 
 
-After this initial build and deploy, you can go back to using `yarn expo run:ios` or `yarn expo run:android` for development.
+After this initial build and deploy, you can start using `yarn expo run:ios` or `yarn expo run:android` for regular development.
 
-*Note:* Whenever you add/change any native components you will need to re-build and deploy the native app using the react-native command.
+*Note:* Whenever you add/change any native components you will need to re-build and deploy the native app using the `react-native...` command.
 
 ---
 
@@ -33,10 +33,14 @@ After this initial build and deploy, you can go back to using `yarn expo run:ios
 The project has been setup with a Github Workflow YAML file to make use of Github Actions to build binaries of the app.
 It has been setup to run manually via the website or cli. This can be changed to run on push or similar actions as desired.
 
-To run the flow, manually go to the Github Repository > Actions > Build Sample Mobile App for IOS And Android then click on the drop down "Run workflow", and finally click the green "Run workflow".
+### Running Github Flow
+To run the flow, go to the Github Repository > Actions > 'Build Sample Mobile App for IOS And Android' then click on the drop down "Run workflow", and finally click the green "Run workflow".
 
-Once the flow is complete, you will find the generated binary under the Artifacts section of the corresponding job.
+### Flow Output/Binaries
+Once the flow is complete, you will find the generated binary under the Summary > Artifacts section of the corresponding workflow run results.
 
+
+The generated .app for iOS can be dragged into an iOS Simulator to run. The generated .aab can be converted to an APK for installation in a simulator with Androids `bundletool` or submitted to the Google Play Store.
 
 ---
 
