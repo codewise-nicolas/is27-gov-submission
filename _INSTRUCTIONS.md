@@ -35,6 +35,8 @@ It has been setup to run manually via the website or cli. This can be changed to
 
 To run the flow, manually go to the Github Repository > Actions > Build Sample Mobile App for IOS And Android then click on the drop down "Run workflow", and finally click the green "Run workflow".
 
+Once the flow is complete, you will find the generated binary under the Artifacts section of the corresponding job.
+
 
 ---
 
