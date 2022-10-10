@@ -45,7 +45,7 @@ The generated .app for iOS can be dragged into an iOS Simulator to run. The gene
 ### Adaptation to fully automated deployment
 As written the workflow generates binaries of the app for iOS and Android as per the Mandatory Task instructions, however to meet the Scoring the flow needs to be augmented to be fully automated from git push to app store deployment. I willl document the extra steps needed to meet this goal.
 
-- The workflow as written would be changed to act on the push event. Depending on how often code is pushed, the action may need to be on a specific label.
+- The workflow as written would be changed to act on the push event. Depending on how often code is pushed, the action may need to be on a specific label or limited scope action.
 - For iOS path, the xcode provisioning profile and signing certificate (password protected) would be included in the repo and the password made part of the Github Secrets so as to not leak them in the repository. The flow would then include xcodebuild commands to archive the project and then push to TestFlight.
 - For Android, depending on whether signing is managed locally or by Google Play different approaches can be followed. However, Google is now recommending that developers let Google Play manage signing. Thus the flow would be augmented to sign the aab with a private key (password protected) and the password made part of the Github Secrets (similar to iOS); this is usually handled by the gradle build steps.
 

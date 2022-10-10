@@ -18,7 +18,7 @@ Monday October 10, 2022 - 11:00 AM PDT
 
 ---
 ## Submission
-Repository: https://github.com/codewise-nicolas/is27-gov-submission\
+Repository: https://github.com/codewise-nicolas/is27-gov-submission \
 Completed required task. Generates iOS app file and Android aab bundle file.\
 Completed Task 1. Created a snapshot test.
 
